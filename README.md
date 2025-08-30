@@ -1,5 +1,7 @@
 # Akuatiq - Local Thrift Store Discovery App
 
+> **Note**: This is the Pilot Version of Akuatiq AI
+
 A modern, DoorDash-style frontend application that allows users to discover and shop from local thrift stores. Built with React, Tailwind CSS, and modern web technologies.
 
 ## Features
@@ -9,6 +11,9 @@ A modern, DoorDash-style frontend application that allows users to discover and 
 - **Product Browsing**: View individual store inventories with detailed product information
 - **Responsive Design**: Mobile-first design that works on all devices
 - **Modern UI**: Clean, intuitive interface inspired by popular delivery apps
+- **Business Dashboard**: Complete inventory management system for store owners
+- **Authentication**: Separate login systems for customers and businesses
+- **Database Models**: Full backend with SQL schema and Sequelize ORM
 
 ## Tech Stack
 
@@ -18,6 +23,8 @@ A modern, DoorDash-style frontend application that allows users to discover and 
 - **Icons**: Lucide React
 - **Build Tool**: Vite
 - **Package Manager**: npm
+- **Backend**: SQL, Sequelize ORM, Node.js
+- **Database**: MySQL/PostgreSQL with migrations
 
 ## Getting Started
 
@@ -30,8 +37,8 @@ A modern, DoorDash-style frontend application that allows users to discover and 
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd akuatiq-app
+git clone https://github.com/Akuatiq-ai/akuatiqAIPilot.git
+cd akuatiqAIPilot
 ```
 
 2. Install dependencies:
@@ -61,15 +68,30 @@ src/
 │   ├── CategoryCard.jsx
 │   ├── Header.jsx
 │   ├── ProductCard.jsx
-│   └── StoreCard.jsx
+│   ├── StoreCard.jsx
+│   └── dashboard/      # Business dashboard components
+│       ├── InventoryManagement.jsx
+│       ├── CurrentOrders.jsx
+│       └── PastOrders.jsx
 ├── pages/              # Page components
 │   ├── HomePage.jsx
-│   └── StorePage.jsx
+│   ├── StorePage.jsx
+│   ├── LoginPage.jsx
+│   └── BusinessDashboard.jsx
 ├── data/               # Mock data and constants
 │   └── mockData.js
 ├── App.jsx             # Main app component
 ├── main.jsx            # React entry point
 └── index.css           # Global styles
+
+backend/
+├── models/             # Sequelize ORM models
+│   ├── Store.js
+│   ├── ClothingArticle.js
+│   └── ClothingImage.js
+├── migrations/         # Database migrations
+├── services/           # Business logic layer
+└── database/           # SQL schema and documentation
 ```
 
 ## Key Components
@@ -84,6 +106,16 @@ src/
 - Product filtering by category
 - Product grid with add-to-cart functionality
 
+### LoginPage
+- Customer and business user authentication
+- Form validation and error handling
+- Redirects business users to dashboard
+
+### BusinessDashboard
+- **Inventory Management**: Add/edit clothing items with image uploads
+- **Current Orders**: Track active orders and pickups
+- **Past Orders & Finances**: View sales analytics and revenue data
+
 ### StoreCard
 - Store information display
 - Rating, delivery time, and distance
@@ -94,6 +126,16 @@ src/
 - Pricing with original vs. thrift prices
 - Condition indicators and size information
 - Like and add-to-cart functionality
+
+## Database Schema
+
+The app includes a complete backend with:
+
+- **Stores Table**: Store information and metadata
+- **Clothing Articles**: Product details with validation
+- **Clothing Images**: 1-3 images per article with ordering
+- **Migrations**: Version-controlled database changes
+- **Service Layer**: Business logic and validation
 
 ## Customization
 
@@ -145,9 +187,9 @@ The app uses Tailwind CSS with custom color schemes defined in `tailwind.config.
 - Order tracking
 - Real-time inventory updates
 - Payment integration
-- Store owner dashboard
-- Review and rating system
 - Advanced search and filtering
+- Review and rating system
+- Mobile app development
 
 ## Contributing
 
