@@ -32,17 +32,7 @@ const Header = () => {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center space-x-4">
-            <button className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition-colors">
-              <MapPin className="h-5 w-5" />
-              <span className="hidden sm:block">Deliver to</span>
-              <span className="font-medium">Home</span>
-            </button>
-            
-            <button className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition-colors">
-              <ShoppingBag className="h-5 w-5" />
-              <span className="hidden sm:block">Orders</span>
-            </button>
+
             
             <Link to="/login" className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition-colors">
               <LogIn className="h-5 w-5" />
